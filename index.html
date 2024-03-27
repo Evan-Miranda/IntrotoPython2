@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Circle Calculation</title>
+</head>
+<body>
+  <script>
+    console.log("Input Diameter of your circle. Negative values will be made positive");
+    let x = prompt();
+    let pi = 3.1415926535897932384626433832795028841971693993751058209749445923078;
+    if (!isNaN(x) || (x.startsWith('-') || x.replace('.', '').match(/^\d+$/))) {
+      console.log("Recognized Number :)");
+      if (parseFloat(x) > 0) {
+        let r = parseFloat(x) / 2;
+        let a = pi * Math.pow(r, 2);
+        let c = pi * parseFloat(x);
+        console.log("Area of your circle is ≈", a.toFixed(2), "u");
+        console.log("Circumference of your circle is ≈", c.toFixed(2), "u");
+      } else {
+        console.log("Number entered was negative, number has been changed to positive,");
+        console.log("circumference and area below are with the positive version of your number");
+        let i = parseFloat(x.substring(1));
+        let r = i / 2;
+        let a = pi * Math.pow(r, 2);
+        let c = pi * i;
+        console.log("Area of your circle is ≈", a.toFixed(2), "u");
+        console.log("Circumference of your circle is ≈", c.toFixed(2), "u");
+      }
+    } else {
+      console.log("Not a number :(");
+      window.close();
+    }
+  </script>
+</body>
+</html>
